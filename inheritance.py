@@ -9,3 +9,24 @@ class Person:
 
 person1 = Person('Jhon', 'Doe')
 person1.printname()
+
+# inherit from Person
+
+
+class Student(Person):
+  def __init__(self, fname, lname, age, type) -> None:
+      #self.fname = fname
+      #self.lname = lname
+      #self.age = age
+      #self.type = type
+      # Note that in real world we can use super() to refer to the Parent class
+      super().__init__(fname, lname)
+      self.age = age
+      self.type = type
+
+  def printname(self):
+    print(self.fname, self.lname, self.age, self.type)
+
+
+student = Student('Alex', 'Smith', 20, 'first class')
+student.printname()
