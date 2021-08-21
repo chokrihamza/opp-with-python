@@ -3,6 +3,9 @@ class Person:
     self.fname = fname
     self.lname = lname
 
+  def __call__(self):
+      print("Hi am the Person class")
+
   def printname(self):
     print(self.fname, self.lname)
 
@@ -24,9 +27,16 @@ class Student(Person):
       self.age = age
       self.type = type
 
+  def __call__(self):
+      print("Hi am the Student class inhert form Person")
+
   def printname(self):
-    print(self.fname, self.lname, self.age, self.type)
+    super().printname()
+    print(f'your age is {self.age}, and you are  {self.type}')
 
 
 student = Student('Alex', 'Smith', 20, 'first class')
 student.printname()
+
+person1()
+student()
