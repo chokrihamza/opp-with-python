@@ -23,7 +23,7 @@ try:
 except:
   print("Something went wrong when writing to the file")
 finally:
-  f.close()
+   f.close()
 x = "hello"
 
 if not type(x) is int:
